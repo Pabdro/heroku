@@ -1,0 +1,15 @@
+name: Deploy
+on:
+push:
+branches:
+- master
+jobs:
+build:
+runs-on: ubuntu-latest
+steps:
+- uses: actions/checkout@v2
+- uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+with:
+heroku_api_key: ${{secrets.1f922dfa-08bd-4348-919d-b72ad029e151}}
+heroku_app_name: "heroku-manualgod" #Must be unique in Heroku
+heroku_email: "pablis.badani@gmail.com"
